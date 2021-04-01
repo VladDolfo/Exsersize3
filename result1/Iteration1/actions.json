@@ -1,0 +1,26 @@
+[
+    {
+        "actionName": "Action",
+        "steps": [
+            {
+                "stepId": "STEP3",
+                "stepName": "Url: Itinerary Button",
+                "infFile": "t4.inf",
+                "time": 1617280796419
+            },
+            {
+                "stepId": "STEP4",
+                "stepName": "Submit Form: itinerary.pl",
+                "infFile": "t5.inf",
+                "time": 1617280796674
+            },
+            {
+                "stepId": "STEP5",
+                "stepName": "Submit Data: itinerary.pl",
+                "infFile": "t6.inf",
+                "time": 1617280796778
+            }
+        ],
+        "transactions": []
+    }
+]
