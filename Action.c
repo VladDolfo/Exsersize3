@@ -14,13 +14,6 @@ Action()
 	
 	
 
-	
-
-
-
-	lr_think_time(14);
-		
-
 	web_url("Itinerary Button", 
 		"URL=http://localhost:1080/cgi-bin/welcome.pl?page=itinerary", 
 		"TargetFrame=body", 
@@ -30,13 +23,17 @@ Action()
 		"Snapshot=t11.inf", 
 		"Mode=HTML", 
 		LAST);
+	
+	
     lr_output_message("Ticket 1 $=%d",atoi(lr_eval_string("{Charge_1}")));
 	lr_output_message("Ticket 2 $=%d",atoi(lr_eval_string("{Charge_2}")));
 	lr_output_message("Ticket 3 $=%d",atoi(lr_eval_string("{Charge_3}")));
 	
+	
+//Нахождение минимума для цены билета	
 	if((atoi(lr_eval_string("{Charge_1}"))<atoi(lr_eval_string("{Charge_2}"))) && (atoi(lr_eval_string("{Charge_2}"))<atoi(lr_eval_string("{Charge_3}")))){
 		min=atoi(lr_eval_string("{Charge_1}"));
-		lr_save_string("1","flightnum");
+		lr_save_string("1","flightnum");   //Сохранение в переменную flightnum значение 1. Для подстановки в web_submit_form
 	}
 	if((atoi(lr_eval_string("{Charge_2}"))<atoi(lr_eval_string("{Charge_1}"))) && (atoi(lr_eval_string("{Charge_2}"))<atoi(lr_eval_string("{Charge_3}")))){
 		min=atoi(lr_eval_string("{Charge_2}"));
@@ -52,9 +49,9 @@ Action()
 
 	/* cancel flight */
 	
-
+//Запрос на отмену
 	web_submit_form("itinerary.pl",ITEMDATA,
-       "Name={flightnum}", "Value=on",ENDITEM,
+       "Name={flightnum}", "Value=on",ENDITEM,          //Постановка значения
        
        "Name=removeFlights.x","Value=36",ENDITEM,
        "Name=removeFlights.y","Value=5",ENDITEM,

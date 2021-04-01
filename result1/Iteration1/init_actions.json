@@ -6,13 +6,13 @@
                 "stepId": "STEP1",
                 "stepName": "Url: webtours",
                 "infFile": "t2.inf",
-                "time": 1617280795981
+                "time": 1617281282335
             },
             {
                 "stepId": "STEP2",
                 "stepName": "Submit Data: login.pl",
                 "infFile": "t3.inf",
-                "time": 1617280796161
+                "time": 1617281282515
             }
         ],
         "transactions": []
